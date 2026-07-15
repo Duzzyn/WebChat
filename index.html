@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <div class="chat-container is-flex is-flex-direction-column">
+      <div class="chat-header">
+        <h1 class="title-header">Chat Online</h1>
+        <span class="user-icon users-active--container">
+          <i class="fas fa-user"></i>
+          <p class="users-active">Users Active: ${countUsers}</h1>
+        </span>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="message message-system">
+          <div class="message-time">${User} Entrou no chat.</div>
+          <div class="message-time" id="chat-message">$ Messagens AHDBASHDASHD</div>
+        </div>
+      </div>
+
+      <form class="user-form">
+        <div class="username-container" id="username-container">
+          <label for="username-input" class="label-input">Digite o nome de usuário:</label>
+          <input class="input" type="text" id="username-input" placeholder="Digite seu nome de usuário" maxlength="20">
+          <button class="button is-link are-medium is-rounded" id="username-button">Entrar</button>
+        </div>
+
+        <div class="message-form hidden" id="message-form-container">
+          <input class="input is-medium" type="text" id="message-input" placeholder="Digite sua mensagem..." disabled>
+          <button class="button is-rounded" id="send-button" disabled>Enviar</button>
+          <button class="button is-danger is-rounded" id="toggle-btn">Disconnect</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
